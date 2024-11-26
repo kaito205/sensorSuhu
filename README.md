@@ -7,6 +7,78 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# 🌡️ Sensor Suhu
+
+Proyek ini adalah sebuah aplikasi web sederhana yang menampilkan data suhu dan kelembapan secara real-time. Aplikasi ini menggunakan teknologi seperti Laravel, Bootstrap, dan jQuery.
+
+## ✨ Fitur
+
+1. **🚀 Navigasi Responsif**
+   - Navbar dengan tautan ke halaman utama dan halaman tentang (About).
+
+2. **⏱️ Tampilan Real-Time**
+   - Menampilkan suhu dalam derajat Celsius dan kelembapan dalam persentase.
+   - Data diperbarui secara otomatis setiap detik dari API yang disediakan oleh Laravel.
+
+3. **⚠️ Notifikasi Status**
+   - Status suhu ditampilkan sebagai:
+     - ✅ **Normal**
+     - 🔥 **Terlalu Panas**
+     - ❄️ **Terlalu Dingin**
+   - Warna teks suhu berubah sesuai dengan statusnya:
+     - 🔴 Merah untuk suhu terlalu panas (>35°C).
+     - 🔵 Biru untuk suhu terlalu dingin (<30°C).
+     - ⚫ Hitam untuk suhu normal (30–35°C).
+
+4. **🎨 Desain Modern**
+   - Menggunakan Bootstrap 5 dan Google Fonts untuk tampilan yang menarik dan responsif.
+   - Elemen-elemen UI seperti kartu (card) untuk suhu dan kelembapan.
+
+## 🛠️ Teknologi yang Digunakan
+
+- **📜 HTML5**: Struktur dasar halaman.
+- **🎨 CSS (Bootstrap 5)**: Untuk styling dan desain responsif.
+- **⚙️ JavaScript (jQuery)**: Untuk pengambilan data secara real-time dan pembaruan DOM.
+- **🚀 Laravel**: Backend untuk API pengambilan data sensor.
+- **✍️ Google Fonts**: Untuk tampilan teks yang menarik.
+- **Font yang Digunakan**: `Goblin One` dan `Poppins`.
+
+## 🔍 Cara Kerja
+
+1. **📡 Data Sensor**:
+   - Data suhu dan kelembapan diambil dari API endpoint Laravel (`{{ route('getdata') }}`).
+   - Setiap detik, data diperbarui menggunakan jQuery.
+
+2. **📊 Status Suhu**:
+   - Status ditentukan berdasarkan nilai suhu:
+     - ✅ **Normal**: 30°C – 35°C.
+     - 🔥 **Terlalu Panas**: >35°C.
+     - ❄️ **Terlalu Dingin**: <30°C.
+   - Warna teks suhu berubah sesuai statusnya.
+
+3. **📱 Desain Responsif**:
+   - Navbar dapat disesuaikan untuk layar kecil.
+   - Komponen seperti kartu dan teks menyesuaikan ukuran layar.
+
+## 📂 Struktur File
+
+- **📜 HTML**: File utama berisi struktur dan elemen UI.
+- **🎨 CSS**: Disimpan di folder `assets/css/style.css`.
+- **🖼️ Gambar**: Disimpan di folder `images`, seperti logo animasi (`cloud.gif`).
+- **⚙️ JavaScript**: Menggunakan jQuery CDN dan file JavaScript custom untuk pengambilan data dan logika status.
+
+
+## ✅ Prasyarat
+
+- **⚙️ Server Laravel** dengan konfigurasi yang sesuai.
+- **📡 Data Sensor**: Endpoint harus menyediakan data dalam format JSON:
+  ```json
+  {
+      "temperature": 30,
+      "humidity": 60
+  }
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
